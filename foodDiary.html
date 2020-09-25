@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Food Diary</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="foodDiary.css" />
+    <script src="foodDiary.js"></script>
+</head>
+
+<body onLoad="main();">
+    <div id="intro">
+        <p>Welcome to the Smart Food Diary. This is a comprehensive diary that intelligently tracks your meals and symptoms
+             to help you determine what you can eat to make you feel your best. To start, select what you'd like to log.
+             And, before you submit, MAKE SURE THE INFORMATION IS CORRECT!!</p>
+    </div>
+    <br />
+    <form id="menuSelection">
+        <fieldset>
+            <legend>Smart Food Diary</legend>
+                <label>I am logging a
+                    <select onchange="menuSelector();">
+                        <option id="meal">meal</option>
+                        <option id="potty">bathroom trip</option>
+                        <option id="symptoms">symptom update</option>
+                    </select>
+                </label>
+                <label for="date">on</label>
+                    <input onchange="fontFamily();" type="date" id="date" name="date" required> <!--FIXME update function once you make it lol-->
+                <label for="time">at</label>
+                    <input onchange="fontFamily();" type="time" id="time" name="time" min="01:00" max="12:00" required> <!--FIXME update function once you make it lol-->
+        </fieldset>
+    </form>
+
+    <form id="mealMenu">
+        <fieldset>
+            <legend>Meal</legend>
+            <table id="foodTable">
+                <tr>
+                    <td><label>Food:<input type="text" size="20" maxlength="50" id="food1" /></label></td>
+                    <td><label>Servings:<input type="text" size="3" maxlength="5" id="serving1" /></label></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Add food item" onclick="addFood();" /></td>
+                    <td><input type="button" value="Remove food item" onclick="removeFood();" /></td>
+                </tr>
+            </table>
+            <label for="submit">Ready to submit? Make sure to double check everything!</label>
+            <input id="submitMeal" onchange="submitMeal();" type="button" value="Submit meal!" />
+        </fieldset>
+    </form>
+
+    <form id="pottyMenu">
+        <fieldset>
+            <legend>Bathroom Trip</legend>
+            <table>
+                <tr>
+                    <td><label>Solidity (0 - liquid, 5 - normal, 10 - brick):
+                        <input type="number" min="0" max="10" id="solidity"></label>
+                    </td>
+                    <td><label>Difficulty Passing (0 - easy, 5 - extremely constipated):
+                        <input type="number" min="0" max="5" id="constipation"></label>
+                    </td>
+                    <td><label>Completeness (0 - all done!, 5 - return trip soon):
+                        <input type="number" min="0" max="5" id="completeness"></label>
+                    </td>
+                </tr>
+            </table>
+            <label for="submit">Ready to submit? Make sure to double check everything!</label>
+            <input id="submitPoop" onchange="submitPoop();" type="button" value="Submit bathroom trip!" />
+        </fieldset>
+    </form>
+
+    <form id="symptomMenu">
+        <fieldset>
+            <legend>Symptom Update</legend>
+            <table>
+                <tr>
+                    <td><label>Appetite (0 - none, 5 - starving):
+                        <input type="number" min="0" max="5" id="appetite"></label>
+                    </td>
+                    <td><label>Upset Stomach (0 - none, 5 - extreme pain/discomfort):
+                        <input type="number" min="0" max="5" id="upsetStomach"></label>
+                    </td>
+                    <td><label>Distension (0 - none, 5 - extreme pressure):
+                        <input type="number" min="0" max="5" id="distension"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Gas (0 - none (a litle is okay), 5 - hot air balloon):
+                        <input type="number" min="0" max="5" id="gas"></label>
+                    </td>
+                    <td><label>belching (0 - none, 5 - very excessive):
+                        <input type="number" min="0" max="5" id="belching"></label>
+                    </td>
+                    <td><label>Heartburn (0 - none, 5 - very painful/nagging):
+                        <input type="number" min="0" max="5" id="heartburn"></label>
+                    </td>
+                </tr>
+            </table>
+            <label for="submit">Ready to submit? Make sure to double check everything!</label>
+            <input id="submitSymptoms" onchange="submitSymptoms();" type="button" value="Submit symptoms!" />
+        </fieldset>
+    </form>
+</body>
+</html>

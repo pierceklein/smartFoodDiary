@@ -1,0 +1,43 @@
+body {background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(8, 189, 77))}
+
+div {
+    text-align: center;
+    font-size: 24pt;
+}
+
+form {
+    font-family: arial;
+    font-size: 18pt;
+}
+
+legend {
+    font-weight: bold;
+}
+
+table {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+td {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    vertical-align: top;
+}
+
+select {font-size: 18pt;}
+
+input {font-size: 18pt;}
+
+form {
+    text-align: center;
+}
+
+#pottyMenu {
+    display: none;
+}
+
+#symptomMenu {
+    display: none;
+}
